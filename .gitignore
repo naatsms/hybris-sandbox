@@ -1,6 +1,19 @@
 *.log
 *.xsd
 *.class
+*.txt
+*.number
+*.png
+*.jar
+*.xmi
+*-testclasses.xml
+*-webtestclasses.xml
+
+/**/build.xml
+/**/buildcallbacks.xml
+/**/ruleset.xml
+
+/**/lib/**
 
 /temp/**
 /roles/**
@@ -8,3 +21,13 @@
 /data/**
 /log/**
 /**/gensrc/**
+/bin/ext-*/**
+/bin/platform/**
+/.idea/**
+
+.springBeans
+.pmd
+.project
+.classpath
+/**/.externalToolBuilders/**
+/**/.settings/**
