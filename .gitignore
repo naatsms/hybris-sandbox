@@ -6,3 +6,5 @@
 /roles/**
 /idea-module-files/**
 /data/**
+/log/**
+/**/gensrc/**
