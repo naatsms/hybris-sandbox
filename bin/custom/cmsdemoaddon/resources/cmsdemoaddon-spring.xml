@@ -12,12 +12,9 @@
 
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:aop="http://www.springframework.org/schema/aop"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
            http://www.springframework.org/schema/beans/spring-beans.xsd
-           http://www.springframework.org/schema/aop
-           http://www.springframework.org/schema/aop/spring-aop.xsd
            http://www.springframework.org/schema/context
            http://www.springframework.org/schema/context/spring-context.xsd">
            
@@ -50,5 +47,17 @@
 		<property name="key" value="PollingCMSComponentContainer" />
 		<property name="value" ref="pollingCMSComponentContainerStrategy" />
 	</bean>
+
+
+
+	<bean id="pollingShowDynamicDescription" class="ru.masterdata.handlers.PollingShowDescription" />
+
+	<bean id="pollingRestrictionEvaluator" class="ru.masterdata.strategies.PollingRestrictionEvaluator"/>
+
+	<bean id="cmsPollingRestrictionEvaluatorMapping" class="de.hybris.platform.cms2.servicelayer.services.evaluator.CMSRestrictionEvaluatorMapping">
+		<property name="restrictionTypeCode" value="PollingShowRestriction" />
+		<property name="restrictionEvaluator" ref="pollingRestrictionEvaluator" />
+	</bean>
+
 
 </beans>

@@ -10,6 +10,8 @@
 *-webtestclasses.xml
 *.template
 
+
+**/hsperfdata_/**
 /**/build.xml
 /**/buildcallbacks.xml
 /**/ruleset.xml

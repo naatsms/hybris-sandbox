@@ -18,7 +18,6 @@
 <requires-extension name="customerticketingaddon"/>
 <requires-extension name="assistedservicestorefront"/>
 <requires-extension name="smarteditaddon"/>
-<requires-extension name="textfieldconfiguratortemplateaddon"/>
 <requires-extension name="promotionenginesamplesaddon"/>
 <requires-extension name="commerceorgsamplesaddon"/>
 <requires-extension name="commerceorgaddon"/>

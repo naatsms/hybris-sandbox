@@ -4,12 +4,12 @@ $contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default = $content
 INSERT_UPDATE PageTemplate;$contentCV[unique=true];uid[unique=true];name;frontendTemplateName;restrictedPageTypes(code);active[default=true];
 ;;LandingPageTemplate;Landing Page Template;layout/landingPage;ContentPage
 
-INSERT_UPDATE ContentSlotName;name[unique=true];template[unique=true];validComponentTypes(code);compTypeGroup
-;Header         ;LandingPageTemplate  ; SimpleBannerComponent;wide
-;BodySection1   ;LandingPageTemplate  ; $wideContent
-;BodySection2   ;LandingPageTemplate  ; $wideContent
-;Bottom         ;LandingPageTemplate  ; CMSParagraphComponent
-;Footer         ;LandingPageTemplate  ; FooterNavigationComponent
+INSERT_UPDATE ContentSlotName;name[unique=true];template[unique=true];compTypeGroup
+;Header         ;LandingPageTemplate  ; wide
+;BodySection1   ;LandingPageTemplate  ; wide
+;BodySection2   ;LandingPageTemplate  ; wide
+;Bottom         ;LandingPageTemplate  ; narrow
+;Footer         ;LandingPageTemplate  ; footer
 
 INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]; name; active[default = true]
 ; ; HeaderSlot        ; Common Header        ; CommonHeaderNavigationMenuComponent

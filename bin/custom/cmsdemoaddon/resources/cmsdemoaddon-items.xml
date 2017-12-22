@@ -1,17 +1,4 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<!--
- [y] hybris Platform
-
- Copyright (c) 2017 SAP SE or an SAP affiliate company.  All rights reserved.
-
- This software is the confidential and proprietary information of SAP
- ("Confidential Information"). You shall not disclose such Confidential
- Information and shall use it only in accordance with the terms of the
- license agreement you entered into with SAP.
--->
-<!--
-	ATTENTION: This is just an example file. You have to edit it according to your needs.
--->
 
 <items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 			xsi:noNamespaceSchemaLocation="items.xsd">
@@ -46,6 +33,37 @@
 		<itemtype code="PollingCMSComponentContainer" jaloclass="de.hybris.platform.cms2.jalo.contents.containers.PollingCMSComponentContainer"
 		          extends="AbstractCMSComponentContainer" autocreate="true" generate="true">
 			<description>Container contains some polling components and shows random one.</description>
+		</itemtype>
+
+
+
+
+
+		
+		<itemtype code="PollingShowRestriction" jaloclass="de.hybris.platform.cms2.jalo.restrictions.PollingShowRestriction"
+		          extends="AbstractRestriction" generate="true" autocreate="true">
+			<description>Restriction disabled polling after specified number of hits.</description>
+			<attributes>
+				<attribute qualifier="hitsAllowed" type="java.lang.Integer">
+					<persistence type="property"/>
+					<defaultvalue>Integer.MAX_VALUE</defaultvalue>
+					<modifiers optional="false"/>
+				</attribute>
+				<attribute qualifier="description" redeclare="true" type="java.lang.String">
+					<persistence type="dynamic" attributeHandler="pollingShowDynamicDescription" />
+					<modifiers write="false" />
+				</attribute>
+			</attributes>
+		</itemtype>
+
+		<itemtype code="PollingCMSComponent" generate="false" autocreate="false">
+			<attributes>
+				<attribute qualifier="hits" type="java.lang.Integer">
+					<persistence type="property"/>
+					<modifiers initial="true"/>
+					<defaultvalue>0</defaultvalue>
+				</attribute>
+			</attributes>
 		</itemtype>
 
 	</itemtypes>

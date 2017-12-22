@@ -7,8 +7,6 @@
       <js>/_ui/addons/smarteditaddon/shared/common/js/adjustComponentRenderingToSE.js</js>
       <js>/_ui/addons/smarteditaddon/responsive/common/js/smarteditaddon.js</js>
       <css>/_ui/addons/smarteditaddon/responsive/common/css/smarteditaddon.css</css>
-      <js>/_ui/addons/textfieldconfiguratortemplateaddon/responsive/common/js/textfieldconfiguratortemplateaddon.js</js>
-      <css>/_ui/addons/textfieldconfiguratortemplateaddon/responsive/common/css/textfieldconfiguratortemplateaddon.css</css>
       <css>/_ui/addons/liveeditaddon/responsive/common/css/liveeditaddon.css</css>
       <js>/_ui/addons/cmsdemoaddon/responsive/common/js/cmsdemoaddon.js</js>
       <css>/_ui/addons/cmsdemoaddon/responsive/common/css/cmsdemoaddon.css</css>
