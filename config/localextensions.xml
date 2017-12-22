@@ -1,0 +1,29 @@
+<hybrisconfig xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:noNamespaceSchemaLocation='../bin/platform/resources/schemas/extensions.xsd'>
+  <extensions>
+    <path dir='${HYBRIS_BIN_DIR}' autoload='false' />
+    <extension name='mcc' />
+    <extension name='adaptivesearchsolr' />
+    <extension name='adaptivesearchbackoffice' />
+    <extension name='adaptivesearchsamplesaddon' />
+    <extension name='b2bcommercebackoffice' />
+    <extension name='solrfacetsearchbackoffice' />
+    <extension name='b2badmincockpit' />
+    <extension name='yacceleratorcockpits' />
+    <extension name='yacceleratorinitialdata' />
+    <extension name='yacceleratorfulfilmentprocess' />
+    <extension name='orderselfserviceaddon' />
+    <extension name='powertoolsstore' />
+    <extension name='solrserver' />
+    <extension name='b2bacceleratoraddon' />
+    <extension name='commerceorgaddon' />
+    <extension name='commerceorgsamplesaddon' />
+    <extension name='customersupportbackoffice' />
+    <extension name='customerticketingaddon' />
+    <extension name='permissionswebservices' />
+    <extension name='assistedservicestorefront' />
+    <extension name='pcmbackofficesamplesaddon' />
+    <extension name='yb2bacceleratorstorefront' />
+    <extension name='yb2bacceleratorstorefront' />
+    <extension name="cmsdemoaddon" />
+  </extensions>
+</hybrisconfig>

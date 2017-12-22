@@ -8,6 +8,7 @@
 *.xmi
 *-testclasses.xml
 *-webtestclasses.xml
+*.template
 
 /**/build.xml
 /**/buildcallbacks.xml

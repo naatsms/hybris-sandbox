@@ -1,0 +1,34 @@
+$contentCatalog = aveContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default = $contentCatalog]), CatalogVersion.version[default = Staged])[default = $contentCatalog:Staged]
+
+INSERT_UPDATE PageTemplate;$contentCV[unique=true];uid[unique=true];name;frontendTemplateName;restrictedPageTypes(code);active[default=true];
+;;LandingPageTemplate;Landing Page Template;layout/landingPage;ContentPage
+
+INSERT_UPDATE ContentSlotName;name[unique=true];template[unique=true];validComponentTypes(code);compTypeGroup
+;Header         ;LandingPageTemplate  ; SimpleBannerComponent;wide
+;BodySection1   ;LandingPageTemplate  ; $wideContent
+;BodySection2   ;LandingPageTemplate  ; $wideContent
+;Bottom         ;LandingPageTemplate  ; CMSParagraphComponent
+;Footer         ;LandingPageTemplate  ; FooterNavigationComponent
+
+INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]; name; active[default = true]
+; ; HeaderSlot        ; Common Header        ; CommonHeaderNavigationMenuComponent
+; ; BottomContentSlot ; Common Bottom Content; CommonBottomComponent
+; ; FooterSlot        ; Common Footer        ; CommonFooterNavigationComponent
+
+INSERT_UPDATE ContentSlotForTemplate; $contentCV[unique = true]; uid[unique = true]; pageTemplate[unique = true]; contentSlot[unique = true];position[unique=true]
+;; HeaderSlot-LandingPageTemplate    ;LandingPageTemplate ; HeaderSlot       ; Header
+;; BottomContent-LandingPageTemplate ;LandingPageTemplate ; BottomContentSlot; Bottom
+;; Footer-LandingPageTemplate        ;LandingPageTemplate ; FooterSlot       ; Footer
+
+INSERT_UPDATE ContentPage; $contentCV[unique = true]; uid[unique = true]; name; masterTemplate; label; defaultPage; approvalStatus; homepage
+;; firstLandingPage   ; First Landing Page   ; LandingPageTemplate ; /first ;true;approved;false;
+;; secondLandingPage  ; Second Landing Page  ; LandingPageTemplate ; /second;true;approved;false;
+
+INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]; name; cmsComponents(uid, $contentCV); active[default = true]
+;; FirstBodySlot   ; First Body Slot   ; SampleRotatingImagesComponent,DescriptionComponent,SampleFeaturesComponent
+;; SecondBodySlot  ; Second Body Slot  ; SampleReviewsComponent
+
+INSERT_UPDATE ContentSlotForPage; $contentCV[unique = true]; uid[unique = true]; pageTemplate[unique = true]; contentSlot[unique = true];position[unique=true]
+;; FirstBodySlot-firstLandingPage   ; firstLandingPage  ; FirstBodySlot   ; BodySection1
+;; SecondBodySlot-firstLandingPage  ; firstLandingPage  ; SecondBodySlot  ; BodySection2

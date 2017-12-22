@@ -1,0 +1,22 @@
+$contentCatalog=powertoolsContentCatalog
+$contentCatalogName=Powertools Content Catalog
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+
+INSERT_UPDATE PollingCMSComponent;$contentCV;uid[unique=true];question[lang=en];answers;pollType(code);&componentref
+;;samplePollingComponent;"Зачем андроиду электроовцы";Прост,Надо было,не нужны;SINGLE;samplePollingComponent
+;;sample2PollingComponent;"А судьи кто?";Судья Батончик,Судья Дредд,Не судите и не судимы будете;MULTI;sample2PollingComponent
+;;sample3PollingComponent;"Быть или не быть?";Быть,Не быть,Я пингвин;SINGLE;sample3PollingComponent
+
+INSERT_UPDATE PollingCMSComponentContainer;$contentCV;uid[unique=true];simpleCMSComponents(&componentref);&containerref
+;;samplePollingComponentContainer;samplePollingComponent,sample2PollingComponent,sample3PollingComponent;samplePollingComponentContainer
+
+## product left refinement slot ##
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents(&containerref)[mode=append]
+;;ProductLeftRefinements;samplePollingComponentContainer
+
+
+
+
+
+
+

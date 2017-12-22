@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+ [y] hybris Platform
+
+ Copyright (c) 2017 SAP SE or an SAP affiliate company.  All rights reserved.
+
+ This software is the confidential and proprietary information of SAP
+ ("Confidential Information"). You shall not disclose such Confidential
+ Information and shall use it only in accordance with the terms of the
+ license agreement you entered into with SAP.
+-->
+<!--
+	ATTENTION: This is just an example file. You have to edit it according to your needs.
+-->
+
+<items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xsi:noNamespaceSchemaLocation="items.xsd">
+
+	<enumtypes>
+		<enumtype code="PollType" autocreate="true" generate="true">
+			<value code="SINGLE"/>
+			<value code="MULTI"/>
+		</enumtype>
+	</enumtypes>
+
+	<itemtypes>
+
+		<itemtype code="PollingCMSComponent" generate="true" autocreate="true"
+		          jaloclass="de.hybris.platform.cms2.jalo.contents.components.PollingCMSComponent" extends="SimpleCMSComponent">
+			<attributes>
+				<attribute qualifier="question" generate="true" autocreate="true" type="java.lang.String">
+					<persistence type="property" />
+					<modifiers optional="false" initial="true"/>
+				</attribute>
+				<attribute qualifier="answers" generate="true" autocreate="true" type="CMSStringList">
+					<persistence type="property" />
+					<modifiers optional="false" initial="true"/>
+				</attribute>
+				<attribute qualifier="pollType" type="PollType">
+				<persistence type="property"/>
+					<modifiers optional="false" initial="true"/>
+				</attribute>
+			</attributes>
+		</itemtype>
+
+		<itemtype code="PollingCMSComponentContainer" jaloclass="de.hybris.platform.cms2.jalo.contents.containers.PollingCMSComponentContainer"
+		          extends="AbstractCMSComponentContainer" autocreate="true" generate="true">
+			<description>Container contains some polling components and shows random one.</description>
+		</itemtype>
+
+	</itemtypes>
+</items>
